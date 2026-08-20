@@ -260,26 +260,56 @@ function initializeContactForm() {
   if (!form) return;
 
   const fields = [
-    { element: form.elements.name, error: document.getElementById("name-error"), message: "Veuillez renseigner votre nom." },
-    { element: form.elements.phone, error: document.getElementById("phone-error"), message: "Veuillez renseigner un numéro de téléphone." },
-    { element: form.elements.message, error: document.getElementById("message-error"), message: "Veuillez écrire votre message." }
+    {
+      element: form.elements.name,
+      error: document.getElementById("name-error"),
+      message: "Indiquez au moins 2 caractères.",
+      validate: (value) => value.trim().length >= 2
+    },
+    {
+      element: form.elements.phone,
+      error: document.getElementById("phone-error"),
+      message: "Utilisez 9 chiffres, avec ou sans +242.",
+      validate: (value) => {
+        const digits = value.replace(/\D/g, "");
+        return digits.length === 9 || (digits.startsWith("242") && digits.length === 12);
+      }
+    },
+    {
+      element: form.elements.message,
+      error: document.getElementById("message-error"),
+      message: "Écrivez au moins 10 caractères.",
+      validate: (value) => value.trim().length >= 10
+    }
   ];
   const status = form.querySelector(".form-status");
 
-  const validateField = (field) => {
-    const isValid = field.element.value.trim().length > 0;
-    field.element.closest(".form-field").classList.toggle("is-invalid", !isValid);
-    field.error.textContent = isValid ? "" : field.message;
-    field.element.setAttribute("aria-invalid", String(!isValid));
-    field.element.setAttribute("aria-describedby", field.error.id);
+  const validateField = (field, showError = false) => {
+    const isValid = field.validate(field.element.value);
+    const container = field.element.closest(".form-field");
+    const hasValue = field.element.value.trim().length > 0;
+
+    container.classList.toggle("is-invalid", showError && !isValid);
+    container.classList.toggle("is-valid", hasValue && isValid);
+    field.error.textContent = showError && !isValid ? field.message : "";
+    field.element.setAttribute("aria-invalid", String(showError && !isValid));
     return isValid;
   };
 
-  fields.forEach((field) => field.element.addEventListener("input", () => validateField(field)));
+  fields.forEach((field) => {
+    field.element.addEventListener("input", () => validateField(field, field.element.dataset.touched === "true"));
+    field.element.addEventListener("blur", () => {
+      field.element.dataset.touched = "true";
+      validateField(field, true);
+    });
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const isValid = fields.every(validateField);
+    const isValid = fields.every((field) => {
+      field.element.dataset.touched = "true";
+      return validateField(field, true);
+    });
 
     if (!isValid) {
       status.textContent = "Quelques informations sont à compléter.";

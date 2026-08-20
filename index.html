@@ -315,9 +315,6 @@
             <a class="partner-link" href="https://www.akieni.com/" target="_blank" rel="noreferrer" aria-label="Découvrir Akieni, ouvre un nouvel onglet">
               <img src="assets/images/partners/akieni.webp" alt="Akieni" width="420" height="66" />
             </a>
-            <a class="partner-link" href="https://akieni.agence360.net/" target="_blank" rel="noreferrer" aria-label="Découvrir Akieni Pay, ouvre un nouvel onglet">
-              <img src="assets/images/partners/akieni-pay.webp" alt="Akieni Pay" width="152" height="51" />
-            </a>
             <a class="partner-link" href="https://www.canalplus.com/cg/" target="_blank" rel="noreferrer" aria-label="Découvrir CANAL+ Congo, ouvre un nouvel onglet">
               <img src="assets/images/partners/canal-plus.webp" alt="CANAL+ Congo" width="420" height="77" />
             </a>
@@ -360,17 +357,17 @@
           <form class="contact-form" novalidate>
             <div class="form-field">
               <label for="name">Nom</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
+              <input id="name" name="name" type="text" autocomplete="name" minlength="2" placeholder="Ex. Jean Dupont" aria-describedby="name-error" required />
               <p class="form-error" id="name-error"></p>
             </div>
             <div class="form-field">
               <label for="phone">Téléphone</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+242 061 234 567" aria-describedby="phone-error" required />
               <p class="form-error" id="phone-error"></p>
             </div>
             <div class="form-field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
+              <textarea id="message" name="message" rows="4" minlength="10" placeholder="Votre question en quelques mots..." aria-describedby="message-error" required></textarea>
               <p class="form-error" id="message-error"></p>
             </div>
             <button class="button button--primary" type="submit">Préparer mon message <i data-lucide="message-circle" aria-hidden="true"></i></button>

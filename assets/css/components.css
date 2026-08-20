@@ -521,6 +521,10 @@
   line-height: 1.25;
 }
 
+.schedule-list li:first-child {
+  border-top: 0;
+}
+
 .schedule-list time {
   color: oklch(0.42 0.02 300);
   font-variant-numeric: tabular-nums;
@@ -970,6 +974,14 @@
   background: oklch(0.06 0.02 258 / 0.25);
   color: var(--color-chalk);
   line-height: 1.4;
+  transition-property: border-color, background-color, box-shadow;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: oklch(0.97 0.01 300 / 0.56);
 }
 
 .form-field input {
@@ -993,6 +1005,19 @@
 .form-field.is-invalid input,
 .form-field.is-invalid textarea {
   border-color: var(--color-error);
+  background: oklch(0.3 0.08 25 / 0.28);
+  box-shadow: 0 0 0 3px oklch(0.68 0.22 25 / 0.18);
+}
+
+.form-field.is-invalid label {
+  color: oklch(0.98 0.08 25);
+}
+
+.form-field.is-valid input,
+.form-field.is-valid textarea {
+  border-color: var(--color-lime);
+  background: oklch(0.28 0.09 128 / 0.2);
+  box-shadow: 0 0 0 3px oklch(0.9 0.22 128 / 0.14);
 }
 
 .form-error {
