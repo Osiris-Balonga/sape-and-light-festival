@@ -22,6 +22,35 @@ function initializeHeroMotion() {
   requestAnimationFrame(() => content.classList.add("is-ready"));
 }
 
+function initializeHeaderScroll() {
+  const header = document.querySelector(".site-header");
+
+  if (!header) return;
+
+  let ticking = false;
+  let isScrolled = false;
+
+  const updateHeader = () => {
+    const shouldBeScrolled = window.scrollY > 24;
+
+    if (shouldBeScrolled !== isScrolled) {
+      header.classList.toggle("is-scrolled", shouldBeScrolled);
+      isScrolled = shouldBeScrolled;
+    }
+
+    ticking = false;
+  };
+
+  const handleScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateHeader);
+  };
+
+  updateHeader();
+  window.addEventListener("scroll", handleScroll, { passive: true });
+}
+
 function initializeMobileMenu() {
   const toggle = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".site-navigation");
@@ -274,6 +303,7 @@ function initializeContactForm() {
 
 initializeIcons();
 initializeHeroMotion();
+initializeHeaderScroll();
 initializeMobileMenu();
 initializeCountdown();
 initializeProgramTabs();
