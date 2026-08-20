@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Festival Sape & Lumière : trois jours de musique, de mode et d'art lumineux à Brazzaville."
+    />
+    <title>Festival Sape & Lumière | Brazzaville</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Festival Sape et Lumière, accueil">
+        <span class="brand-mark" aria-hidden="true">S&L</span>
+        <span class="brand-name">Sape &amp; Lumière</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span class="menu-toggle__label">Menu</span>
+        <span class="menu-toggle__icons" aria-hidden="true">
+          <i data-lucide="menu"></i>
+          <i data-lucide="x"></i>
+        </span>
+      </button>
+
+      <nav class="site-navigation" id="main-navigation" aria-label="Navigation principale">
+        <a href="#program">Programme</a>
+        <a href="#lineup">Line-up</a>
+        <a href="#passes">Pass</a>
+        <a href="#faq">FAQ</a>
+        <a class="button button--compact" href="#passes">Réserver</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <picture class="hero__media">
+          <source
+            media="(max-width: 720px)"
+            srcset="assets/images/hero/festival-night-900.webp"
+            width="900"
+            height="1200"
+          />
+          <img
+            src="assets/images/hero/festival-night-1600.webp"
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            alt="Des festivaliers élégants dansent sous les lumières vertes et violettes du Festival Sape & Lumière."
+          />
+        </picture>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <div class="hero__content content-shell">
+          <p class="hero__date">12 - 14 décembre 2026 · Brazzaville</p>
+          <h1 id="hero-title">La ville<br />s'habille<br /><span>de lumière.</span></h1>
+          <p class="hero__lead">
+            Trois nuits pour célébrer la Sape congolaise, la musique live et les installations qui transforment la ville.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#program">Voir le programme <i data-lucide="arrow-down-right" aria-hidden="true"></i></a>
+            <a class="button button--quiet" href="#passes">Choisir son Pass</a>
+          </div>
+
+          <div
+            class="countdown"
+            data-countdown-date="2026-12-12T18:00:00+01:00"
+            aria-live="polite"
+            aria-label="Temps restant avant l'ouverture du festival"
+          >
+            <span class="countdown__intro">Ouverture dans</span>
+            <div class="countdown__units">
+              <div><strong data-countdown-days>00</strong><span>jours</span></div>
+              <div><strong data-countdown-hours>00</strong><span>heures</span></div>
+              <div><strong data-countdown-minutes>00</strong><span>minutes</span></div>
+              <div><strong data-countdown-seconds>00</strong><span>secondes</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto content-shell" aria-labelledby="manifesto-title">
+        <div class="manifesto__heading" data-reveal>
+          <p class="section-label">Une ville, trois vibrations</p>
+          <h2 id="manifesto-title">Mode. Son.<br />Lumière.</h2>
+        </div>
+        <div class="manifesto__copy" data-reveal>
+          <p>
+            La Sape n'est pas un costume. C'est une présence. Pendant trois jours, elle rencontre les voix live, les silhouettes audacieuses et l'art qui éclaire l'espace public.
+          </p>
+          <a class="text-link" href="#lineup">Découvrir les univers <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
+
+      <section class="program-section" id="program" aria-labelledby="program-title">
+        <div class="content-shell">
+          <div class="section-heading section-heading--split" data-reveal>
+            <div>
+              <p class="section-label">À vivre sur place</p>
+              <h2 id="program-title">Trois jours.<br />Trois rythmes.</h2>
+            </div>
+            <p>Choisissez un jour pour parcourir les rendez-vous essentiels, sans quitter la page.</p>
+          </div>
+
+          <div class="program-tabs" data-reveal>
+            <div class="program-tabs__list" role="tablist" aria-label="Jours du festival">
+              <button type="button" role="tab" id="friday-tab" aria-selected="true" aria-controls="friday-panel">Vendredi <span>12</span></button>
+              <button type="button" role="tab" id="saturday-tab" aria-selected="false" aria-controls="saturday-panel" tabindex="-1">Samedi <span>13</span></button>
+              <button type="button" role="tab" id="sunday-tab" aria-selected="false" aria-controls="sunday-panel" tabindex="-1">Dimanche <span>14</span></button>
+            </div>
+
+            <div class="program-tabs__panels">
+              <section class="program-panel" id="friday-panel" role="tabpanel" aria-labelledby="friday-tab">
+                <p class="program-panel__moment">Nuit d'ouverture</p>
+                <ol class="schedule-list">
+                  <li><time datetime="2026-12-12T17:00">17:00</time><span>Ouverture des portes et parcours lumière</span></li>
+                  <li><time datetime="2026-12-12T19:30">19:30</time><span>Défilé Sape : Éclats de Bacongo</span></li>
+                  <li><time datetime="2026-12-12T21:00">21:00</time><span>Concert live : Amina Kaya &amp; invités</span></li>
+                  <li><time datetime="2026-12-12T23:30">23:30</time><span>DJ set sous les néons</span></li>
+                </ol>
+              </section>
+
+              <section class="program-panel" id="saturday-panel" role="tabpanel" aria-labelledby="saturday-tab" hidden>
+                <p class="program-panel__moment">Le grand soir</p>
+                <ol class="schedule-list">
+                  <li><time datetime="2026-12-13T15:00">15:00</time><span>Atelier style : le détail qui signe une allure</span></li>
+                  <li><time datetime="2026-12-13T18:00">18:00</time><span>Rencontre avec les créateurs invités</span></li>
+                  <li><time datetime="2026-12-13T20:30">20:30</time><span>Grand live : Brazzaville en mouvement</span></li>
+                  <li><time datetime="2026-12-13T00:00">00:00</time><span>Bal lumineux en plein air</span></li>
+                </ol>
+              </section>
+
+              <section class="program-panel" id="sunday-panel" role="tabpanel" aria-labelledby="sunday-tab" hidden>
+                <p class="program-panel__moment">Le dernier éclat</p>
+                <ol class="schedule-list">
+                  <li><time datetime="2026-12-14T14:00">14:00</time><span>Brunch musical et portraits de Sapologues</span></li>
+                  <li><time datetime="2026-12-14T17:30">17:30</time><span>Performance Art Lumière : Malia Ntima</span></li>
+                  <li><time datetime="2026-12-14T20:00">20:00</time><span>Final collectif sur les quais</span></li>
+                  <li><time datetime="2026-12-14T22:00">22:00</time><span>Clôture du festival</span></li>
+                </ol>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lineup-section content-shell" id="lineup" aria-labelledby="lineup-title">
+        <div class="section-heading section-heading--split" data-reveal>
+          <div>
+            <p class="section-label">Ceux qui font la nuit</p>
+            <h2 id="lineup-title">Le line-up<br />en mouvement.</h2>
+          </div>
+          <div class="filter-group" aria-label="Filtrer le line-up">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Tout voir</button>
+            <button class="filter-button" type="button" data-filter="music" aria-pressed="false">Musique</button>
+            <button class="filter-button" type="button" data-filter="fashion" aria-pressed="false">Mode &amp; Sape</button>
+            <button class="filter-button" type="button" data-filter="light" aria-pressed="false">Art Lumière</button>
+          </div>
+        </div>
+
+        <p class="sr-only" id="lineup-status" aria-live="polite"></p>
+        <div class="artist-grid" data-reveal>
+          <article class="artist-card artist-card--tall" data-category="music" style="--reveal-index: 0">
+            <img src="assets/images/artists/amina-kaya-720.webp" width="720" height="960" loading="lazy" alt="Amina Kaya, chanteuse en costume rose vif, dans les coulisses du festival." />
+            <div class="artist-card__caption">
+              <p>Musique</p>
+              <h3>Amina Kaya</h3>
+              <span>Voix live</span>
+            </div>
+          </article>
+          <article class="artist-card artist-card--offset" data-category="fashion" style="--reveal-index: 1">
+            <img src="assets/images/artists/bemba-zo-720.webp" width="720" height="960" loading="lazy" alt="Bemba Zo, sapeur en costume jaune, éclairé par un projecteur violet." />
+            <div class="artist-card__caption">
+              <p>Mode &amp; Sape</p>
+              <h3>Bemba Zo</h3>
+              <span>Silhouettes d'auteur</span>
+            </div>
+          </article>
+          <article class="artist-card" data-category="light" style="--reveal-index: 2">
+            <img src="assets/images/artists/malia-ntima-720.webp" width="720" height="960" loading="lazy" alt="Malia Ntima installe une sculpture lumineuse verte et violette." />
+            <div class="artist-card__caption">
+              <p>Art Lumière</p>
+              <h3>Malia Ntima</h3>
+              <span>Installations vivantes</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="passes-section" id="passes" aria-labelledby="passes-title">
+        <div class="content-shell">
+          <div class="passes-section__intro" data-reveal>
+            <p class="section-label">Entrer dans la lumière</p>
+            <h2 id="passes-title">Votre nuit.<br />Votre Pass.</h2>
+          </div>
+          <div class="pass-grid" data-reveal>
+            <article class="pass-card" style="--reveal-index: 0">
+              <p class="pass-card__eyebrow">Pour une soirée</p>
+              <h3>Pass 1 jour</h3>
+              <p class="pass-card__price">5 000 <span>FCFA</span></p>
+              <ul>
+                <li>Accès à une journée complète</li>
+                <li>Programme musique, mode et lumière</li>
+                <li>Réservation instantanée via WhatsApp</li>
+              </ul>
+              <a
+                class="button button--dark"
+                data-pass-name="Pass 1 jour"
+                href="https://wa.me/242061234567?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20Pass%201%20jour%20pour%20le%20Festival%20Sape%20%26%20Lumi%C3%A8re."
+                target="_blank"
+                rel="noreferrer"
+              >Réserver ce Pass <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="pass-card pass-card--featured" style="--reveal-index: 1">
+              <p class="pass-card__eyebrow">Pour tout vivre</p>
+              <h3>Pass 3 jours</h3>
+              <p class="pass-card__price">12 000 <span>FCFA</span></p>
+              <ul>
+                <li>Accès aux trois jours du festival</li>
+                <li>Entrée prioritaire dès 17 h</li>
+                <li>Un tote bag du festival offert</li>
+              </ul>
+              <a
+                class="button button--primary"
+                data-pass-name="Pass 3 jours"
+                href="https://wa.me/242061234567?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20Pass%203%20jours%20pour%20le%20Festival%20Sape%20%26%20Lumi%C3%A8re."
+                target="_blank"
+                rel="noreferrer"
+              >Réserver ce Pass <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="practical-section content-shell" aria-labelledby="practical-title">
+        <div class="practical-section__notice" data-reveal>
+          <i data-lucide="sparkles" aria-hidden="true"></i>
+          <p>Les quais de Brazzaville deviennent une scène à ciel ouvert.</p>
+        </div>
+        <div class="section-heading" data-reveal>
+          <p class="section-label">Préparer sa venue</p>
+          <h2 id="practical-title">Simple à rejoindre.<br />Impossible à oublier.</h2>
+        </div>
+        <dl class="practical-list" data-reveal>
+          <div><dt><i data-lucide="map-pin" aria-hidden="true"></i> Lieu</dt><dd>Quais de Brazzaville, entrée principale côté Palais des Congrès.</dd></div>
+          <div><dt><i data-lucide="clock-3" aria-hidden="true"></i> Horaires</dt><dd>Ouverture des portes à 17 h, vendredi à dimanche.</dd></div>
+          <div><dt><i data-lucide="utensils" aria-hidden="true"></i> Sur place</dt><dd>Restauration, bars sans alcool, points d'eau et espace détente.</dd></div>
+          <div><dt><i data-lucide="car-front" aria-hidden="true"></i> Accès</dt><dd>Parking limité. Privilégiez le covoiturage et les taxis partenaires.</dd></div>
+        </dl>
+      </section>
+
+      <section class="partners-section" aria-labelledby="partners-title">
+        <div class="content-shell" data-reveal>
+          <p class="section-label">Avec le soutien de</p>
+          <h2 id="partners-title">Nos partenaires lumière</h2>
+          <div class="partner-list" aria-label="Partenaires du festival">
+            <span>MBONGI</span>
+            <span>CANAL ARTS</span>
+            <span>KINDA</span>
+            <span>RIVIÈRE</span>
+            <span>NIOKA</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-contact-section content-shell" id="faq">
+        <div class="faq-contact-section__faq" data-reveal>
+          <p class="section-label">Questions fréquentes</p>
+          <h2>Les détails<br />qui comptent.</h2>
+          <div class="faq-list">
+            <details>
+              <summary><span>Y a-t-il un âge minimum ?</span><i data-lucide="plus" aria-hidden="true"></i></summary>
+              <div class="faq-answer"><p>Le festival est accessible à tous. Les mineurs de moins de 16 ans doivent être accompagnés d'un adulte après 20 h.</p></div>
+            </details>
+            <details>
+              <summary><span>Peut-on se restaurer sur place ?</span><i data-lucide="plus" aria-hidden="true"></i></summary>
+              <div class="faq-answer"><p>Oui. Une sélection de restaurateurs sera présente chaque jour, avec des options végétariennes et sans alcool.</p></div>
+            </details>
+            <details>
+              <summary><span>Que se passe-t-il en cas de pluie ?</span><i data-lucide="plus" aria-hidden="true"></i></summary>
+              <div class="faq-answer"><p>Les installations restent accessibles. Certaines performances seront déplacées sous les structures couvertes du site.</p></div>
+            </details>
+            <details>
+              <summary><span>Le parking est-il disponible ?</span><i data-lucide="plus" aria-hidden="true"></i></summary>
+              <div class="faq-answer"><p>Quelques places sont prévues à proximité, dans la limite des disponibilités. Le covoiturage est recommandé.</p></div>
+            </details>
+            <details>
+              <summary><span>Comment venir sans voiture ?</span><i data-lucide="plus" aria-hidden="true"></i></summary>
+              <div class="faq-answer"><p>Les taxis partenaires déposent les visiteurs près de l'entrée. Organisez aussi un covoiturage avec votre entourage.</p></div>
+            </details>
+          </div>
+        </div>
+
+        <section class="contact-panel" id="contact" aria-labelledby="contact-title" data-reveal>
+          <p class="section-label">Une autre question ?</p>
+          <h2 id="contact-title">On vous répond<br />sur WhatsApp.</h2>
+          <p>Écrivez-nous. Votre message sera préparé dans WhatsApp après validation.</p>
+          <form class="contact-form" novalidate>
+            <div class="form-field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+              <p class="form-error" id="name-error"></p>
+            </div>
+            <div class="form-field">
+              <label for="phone">Téléphone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+              <p class="form-error" id="phone-error"></p>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              <p class="form-error" id="message-error"></p>
+            </div>
+            <button class="button button--primary" type="submit">Préparer mon message <i data-lucide="message-circle" aria-hidden="true"></i></button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="content-shell">
+        <div class="footer__top">
+          <a class="brand brand--footer" href="#home">
+            <span class="brand-mark" aria-hidden="true">S&L</span>
+            <span class="brand-name">Sape &amp; Lumière</span>
+          </a>
+          <p>Une célébration nocturne de la Sape, du son et des éclats qui font vibrer Brazzaville.</p>
+          <a class="button button--primary" href="#passes">Trouver son Pass <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="footer__middle">
+          <div>
+            <p class="footer__label">Explorer</p>
+            <nav class="footer__links" aria-label="Navigation du pied de page">
+              <a href="#program">Programme</a>
+              <a href="#lineup">Line-up</a>
+              <a href="#passes">Pass</a>
+              <a href="#faq">Questions</a>
+            </nav>
+          </div>
+          <div>
+            <p class="footer__label">Nous suivre</p>
+            <div class="footer__socials">
+              <a href="#contact" aria-label="Instagram du festival"><i data-lucide="instagram" aria-hidden="true"></i></a>
+              <a href="#contact" aria-label="Facebook du festival"><i data-lucide="facebook" aria-hidden="true"></i></a>
+              <a href="#contact" aria-label="Musique du festival"><i data-lucide="music-2" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="footer__contact">
+            <p class="footer__label">Le point de contact</p>
+            <a href="#contact">Écrire à l'équipe <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            <p>Quais de Brazzaville<br />12 - 14 décembre 2026</p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>Festival culturel fictif · Cas pratique Akieni Academy.</p>
+          <a href="#home">Retour en haut <i data-lucide="arrow-up" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

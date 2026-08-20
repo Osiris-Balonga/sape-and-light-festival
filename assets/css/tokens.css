@@ -1,0 +1,52 @@
+:root {
+  --color-night: oklch(0.09 0.012 300);
+  --color-night-raised: oklch(0.14 0.025 300);
+  --color-ink: oklch(0.13 0.02 300);
+  --color-chalk: oklch(0.97 0.01 300);
+  --color-muted: oklch(0.75 0.025 300);
+  --color-line: oklch(0.93 0.02 300 / 0.22);
+  --color-lime: oklch(0.9 0.22 128);
+  --color-lime-strong: oklch(0.81 0.22 128);
+  --color-pink: oklch(0.68 0.25 350);
+  --color-violet: oklch(0.58 0.22 302);
+  --color-blue: oklch(0.56 0.18 258);
+  --color-error: oklch(0.68 0.22 25);
+
+  --font-display: "League Gothic", "Arial Narrow", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-label: 0.79rem;
+  --text-title: clamp(2.65rem, 7vw, 5.75rem);
+  --text-heading: clamp(2.4rem, 5vw, 4.6rem);
+  --text-subheading: clamp(1.65rem, 2.4vw, 2.25rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: clamp(4rem, 9vw, 8rem);
+  --space-4xl: clamp(5rem, 13vw, 11rem);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+
+  --content-max: 78rem;
+  --gutter: clamp(1rem, 3vw, 3.5rem);
+  --header-height: 4.5rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-medium: 320ms;
+
+  --z-base: 1;
+  --z-content: 10;
+  --z-header: 30;
+  --z-navigation: 40;
+}
