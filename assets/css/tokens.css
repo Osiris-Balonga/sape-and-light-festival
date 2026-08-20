@@ -47,6 +47,7 @@
 
   --z-base: 1;
   --z-content: 10;
+  --z-preview: 20;
   --z-header: 30;
   --z-navigation: 40;
 }

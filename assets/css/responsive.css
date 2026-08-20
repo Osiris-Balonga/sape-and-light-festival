@@ -50,6 +50,12 @@
   }
 }
 
+@media (max-width: 759px), (hover: none), (pointer: coarse) {
+  .practical-preview {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero__media img {
     object-position: center;

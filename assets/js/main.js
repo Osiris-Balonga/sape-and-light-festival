@@ -22,6 +22,53 @@ function initializeHeroMotion() {
   requestAnimationFrame(() => content.classList.add("is-ready"));
 }
 
+function initializePracticalPreviews() {
+  const section = document.querySelector(".practical-section");
+  const preview = section?.querySelector(".practical-preview");
+  const image = preview?.querySelector("img");
+  const rows = Array.from(section?.querySelectorAll(".practical-list [data-preview]") || []);
+  const hoverMedia = window.matchMedia("(min-width: 760px) and (hover: hover) and (pointer: fine)");
+  let animationFrame = 0;
+  let pointer = { x: 0, y: 0 };
+
+  if (!preview || !image || !rows.length || reduceMotion || !hoverMedia.matches) return;
+
+  rows.forEach((row) => {
+    const preload = new Image();
+    preload.src = row.dataset.preview;
+  });
+
+  const positionPreview = () => {
+    const offset = 22;
+    const width = preview.offsetWidth;
+    const height = preview.offsetHeight;
+    const x = Math.min(pointer.x + offset, window.innerWidth - width - offset);
+    const y = Math.min(pointer.y + offset, window.innerHeight - height - offset);
+
+    preview.style.setProperty("--preview-x", `${Math.max(offset, x)}px`);
+    preview.style.setProperty("--preview-y", `${Math.max(offset, y)}px`);
+    animationFrame = 0;
+  };
+
+  const movePreview = (event) => {
+    pointer = { x: event.clientX, y: event.clientY };
+    if (!animationFrame) animationFrame = window.requestAnimationFrame(positionPreview);
+  };
+
+  rows.forEach((row) => {
+    row.addEventListener("pointerenter", (event) => {
+      image.src = row.dataset.preview;
+      preview.classList.add("is-visible");
+      movePreview(event);
+    });
+
+    row.addEventListener("pointermove", movePreview);
+    row.addEventListener("pointerleave", () => {
+      preview.classList.remove("is-visible");
+    });
+  });
+}
+
 function initializeHeaderScroll() {
   const header = document.querySelector(".site-header");
 
@@ -333,6 +380,7 @@ function initializeContactForm() {
 
 initializeIcons();
 initializeHeroMotion();
+initializePracticalPreviews();
 initializeHeaderScroll();
 initializeMobileMenu();
 initializeCountdown();

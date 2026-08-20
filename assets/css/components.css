@@ -804,6 +804,55 @@
   line-height: 1.45;
 }
 
+.practical-preview {
+  position: fixed;
+  z-index: var(--z-preview);
+  top: 0;
+  left: 0;
+  width: clamp(13rem, 22vw, 19rem);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  outline: 1px solid oklch(1 0 0 / 0.16);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(var(--preview-x, 0px), var(--preview-y, 0px), 0) scale(0.92);
+  transition-property: opacity, transform;
+  transition-duration: var(--duration-medium);
+  transition-timing-function: var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.practical-preview.is-visible {
+  opacity: 1;
+  transform: translate3d(var(--preview-x, 0px), var(--preview-y, 0px), 0) scale(1);
+}
+
+.practical-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.practical-preview::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, oklch(0.58 0.22 302 / 0.12), transparent 48%, oklch(0.9 0.22 128 / 0.14));
+  content: "";
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .practical-list > div {
+    transition-property: background-color;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .practical-list > div:hover {
+    background: oklch(1 0 0 / 0.035);
+  }
+}
+
 .partners-section {
   padding-block: var(--space-3xl);
   background: var(--color-violet);
@@ -1175,5 +1224,9 @@
     opacity: 1;
     transform: none;
     filter: none;
+  }
+
+  .practical-preview {
+    display: none;
   }
 }
