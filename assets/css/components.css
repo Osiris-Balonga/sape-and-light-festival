@@ -805,12 +805,41 @@
 .partner-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm) clamp(1.25rem, 4vw, 3.5rem);
+  align-items: center;
+  gap: var(--space-md) clamp(1.5rem, 4vw, 3.75rem);
   margin-top: var(--space-xl);
-  color: oklch(0.97 0.01 300 / 0.92);
-  font-size: clamp(1.1rem, 2vw, 1.7rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
+}
+
+.partner-link {
+  position: relative;
+  display: inline-flex;
+  min-width: 6rem;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-xs);
+  opacity: 0.72;
+  transition-property: opacity, filter, transform;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+.partner-link:hover,
+.partner-link:focus-visible {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(44%) saturate(645%) hue-rotate(43deg) brightness(104%) contrast(90%);
+  transform: translateY(-0.15rem);
+}
+
+.partner-link:active {
+  transform: scale(0.96);
+}
+
+.partner-link img {
+  width: auto;
+  max-width: 11.5rem;
+  height: clamp(2rem, 4vw, 3.25rem);
+  object-fit: contain;
 }
 
 .faq-contact-section {
@@ -1050,31 +1079,12 @@
   transform: translateX(0.2rem);
 }
 
-.footer__socials {
-  display: flex;
-  gap: var(--space-xs);
+.footer__note {
+  max-width: 15rem;
   margin-top: var(--space-sm);
-}
-
-.footer__socials a {
-  display: grid;
-  width: 2.75rem;
-  height: 2.75rem;
-  place-items: center;
-  border: 1px solid oklch(0.97 0.01 300 / 0.3);
-  border-radius: 50%;
-  color: var(--color-chalk);
-  transition-property: background-color, color, transform, border-color;
-  transition-duration: var(--duration-fast);
-  transition-timing-function: var(--ease-out);
-}
-
-.footer__socials a:hover,
-.footer__socials a:focus-visible {
-  border-color: var(--color-lime);
-  background: var(--color-lime);
-  color: var(--color-ink);
-  transform: translateY(-0.2rem);
+  color: oklch(0.97 0.01 300 / 0.64);
+  font-size: var(--text-small);
+  line-height: 1.5;
 }
 
 .footer__contact {
